@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./icon.png">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>tic tac toe</h1>
+        <div class="players-box" id="players-box">
+            <div class="player">Player 1 = <span id="player-1">0</span></div>
+            <div class="player">Player 2 = <span id="player-2">0</span></div>
+        </div>
+        <div class="stage" id="stage">
+            <div class="row">
+                <div id="0" class="square"></div>
+                <div id="1" class="square"></div>
+                <div id="2" class="square"></div>
+            </div>
+            <div class="row">
+                <div id="3" class="square"></div>
+                <div id="4" class="square"></div>
+                <div id="5" class="square"></div>
+            </div>
+            <div class="row">
+                <div id="6" class="square"></div>
+                <div id="7" class="square"></div>
+                <div id="8" class="square"></div>
+            </div>
+        </div>
+
+        <div id="choicePlayer" class="choicePlayer">
+            <div class="btn-box">
+                <button onclick="player(0)">Player vs Player</button>
+                <button onclick="player(1)">Player vs Computer</button>
+            </div>
+        </div>
+
+        <div id="playAgain" class="btn-box">
+            <button onclick="playAgain()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="./Javascript/game.js"></script>
+    <script src="./Javascript/interface.js"></script>
+    
+</body>
+</html>

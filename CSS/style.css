@@ -1,0 +1,136 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #191726;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    font-family: 'Courgette', cursive;
+    font-size: 50px;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: lighter;
+    text-transform: capitalize;
+}
+
+button{
+    width: 220px;
+    height: 50px;
+    outline: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: #101112;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #20DF34;
+}
+
+#stage{
+    display: none;
+}
+
+#playAgain{
+    display: none;
+}
+
+#players-box{
+    display: none;
+}
+
+.container{
+    width: 340px;
+    margin: auto;
+}
+
+.players-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.player{
+    background-color: #101112;
+    padding: 5px 10px;
+    font-size: 20px;
+}
+
+.stage{
+    background-color: #101112;
+    width: 340px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 20px 0;
+}
+
+.row{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.square{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    position: relative;
+}
+
+.square:hover{
+    background-color: #20DF34;
+}
+
+.o{
+    width: 50px;
+    height: 50px;
+    background-image: url(../players/o.png);
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.x{
+    width: 40px;
+    height: 40px;
+    background-image: url(../players/x.png);
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.choicePlayer{
+    background-color: #101112;
+    width: 340px;
+    height: 340px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.choicePlayer .btn-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-box button{
+    margin: 10px 0;
+}
+
+.btn-box{
+    text-align: center;
+}
