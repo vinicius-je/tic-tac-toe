@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
     squares.forEach((square) => {
         square.addEventListener("click", handleClick)
     })
+
+    showPlayerTimer(playerTime);
 })
 
 // Get the game mode (player vs player or player vs computer)
@@ -46,7 +48,8 @@ function handleClick(event){
     }
 
     if(gameMode == 1){
-        computer();
+       /* computer() */
+        setTimeout(computer, 300);
     }
     updateSquare(position);
 }
@@ -92,6 +95,19 @@ function computer(){
     moves++;
 }
 
+// Show the player's turn
+function showPlayerTimer(player){
+    let playerTimer = document.getElementsByClassName("player") 
+    
+    if(player == 0){
+        playerTimer[0].classList.add("playerTimer")
+        playerTimer[1].classList.remove("playerTimer") 
+    }else if(player == 1){
+        playerTimer[0].classList.remove("playerTimer") 
+        playerTimer[1].classList.add("playerTimer")
+    }
+}
+
 // Display players scoreboard
 function scoreboard(result){
     if(result == "o"){
@@ -120,8 +136,8 @@ function playerWinner(player){
 function draw(moves){
     if(moves == 8){
         setTimeout(()=>{
-            alert("draw")
-        }, 30)
+            alert("Draw")
+        }, 50)
     }
 }
 
@@ -132,7 +148,13 @@ function playAgain(){
     board = ['','','','','','','','',''];
     moves = 0;
     cleanSquares();
+    showPlayerTimer(playerTime);
 }
+
+
+
+
+
 
 
 

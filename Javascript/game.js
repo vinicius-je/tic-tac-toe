@@ -33,7 +33,8 @@ function handleMove(position){
         gameOver = isWin();
 
         if(gameOver == false){
-            playerTime = (playerTime == 0) ? 1 : 0
+            playerTime = (playerTime == 0) ? 1 : 0;
+            showPlayerTimer(playerTime)
         }
     }
     return gameOver;
