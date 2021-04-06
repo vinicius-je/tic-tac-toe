@@ -26,6 +26,9 @@ function player(choice){
     if(choice == 1){
         let scoreboard = document.getElementsByClassName("player")[1];
         scoreboard.innerHTML = `Computer = <span id="player-2">0</span>`;
+    }else if(choice == 2){
+         computerVscomputer();
+         reset_computer = true;
     }
  
     gameMode = choice;
@@ -37,7 +40,7 @@ function handleClick(event){
     let square = event.target;
     let position = square.id;
 
-    if(handleMove(position)){
+    if(hasWinner(position)){
         setTimeout(()=>{
             playerWinner(playerTime)
         }, 30)
@@ -48,7 +51,6 @@ function handleClick(event){
     }
 
     if(gameMode == 1){
-       /* computer() */
         setTimeout(computer, 300);
     }
     updateSquare(position);
@@ -68,31 +70,6 @@ function cleanSquares(){
     squares.forEach((square) =>{
         square.innerHTML = "";
     })
-}
-
-// generates a move to the computer
-function computer(){
-
-    let n = Math.floor(Math.random() * 9);
-    let emptySquare = 0;
-
-    for(let i of board){
-        if(i === "")
-        emptySquare++;
-    }
-  
-    while(board[n] != "" && emptySquare > 1){
-        n = Math.floor(Math.random() * 9);
-    }
-
-    if(handleMove(n)){
-       setTimeout(()=>{
-            playerWinner(playerTime)
-       }, 30)}
-
-    handleMove(n);
-    updateSquare(n);
-    moves++;
 }
 
 // Show the player's turn
@@ -134,9 +111,11 @@ function playerWinner(player){
 
 // Display draw
 function draw(moves){
-    if(moves == 8){
+    console.log(moves)
+    if(moves >= 8 && gameOver == false){
         setTimeout(()=>{
             alert("Draw")
+            clearInterval(interval);
         }, 50)
     }
 }
@@ -149,6 +128,16 @@ function playAgain(){
     moves = 0;
     cleanSquares();
     showPlayerTimer(playerTime);
+    resetComputer();
+}
+
+// Check if has a winner
+function hasWinner(position){
+    if(handleMove(position)){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 

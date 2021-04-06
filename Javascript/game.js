@@ -40,7 +40,7 @@ function handleMove(position){
     return gameOver;
 }
 
-// Check if there a winner
+// Check if there winner move & add a point in scoreboard
 function isWin(){
     for(let i = 0; i < winStates.length; i++){
         let seq = winStates[i]
