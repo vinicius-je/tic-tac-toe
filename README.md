@@ -1,5 +1,8 @@
 # Tic Tac Toe
 
+## Available Language:
+* pt-BR: [README-pt-BR.md](https://github.com/vinicius-je/tic-tac-toe/blob/main/README-pt-BR.md)
+
 ## Objective:
 
  Apply the contents worked in the programadorBr course through the development of a tic tac toe game
