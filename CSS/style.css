@@ -32,7 +32,8 @@ button{
 }
 
 button:hover{
-    background-color: #20DF34;
+    transform: scale(1.1);
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 #stage{
@@ -137,4 +138,8 @@ button:hover{
 
 .playerTimer{
     color: #20DF34;
+}
+
+.squareWinner{
+    background: #20DF34;
 }

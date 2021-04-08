@@ -14,7 +14,7 @@ function computer(){
         n = Math.floor(Math.random() * 9);
     }
 
-    if(hasWinner(n)){
+    if(handleMove(n)){
         setTimeout(()=>{
             playerWinner(playerTime)
         }, 30)
@@ -37,7 +37,6 @@ function computerVscomputer(){
             for(let i in board){
                 if(board[i] != ""){
                     n++;
-                    console.log(n)
                 }
                 if(n == 9){
                     draw(moves);

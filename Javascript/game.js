@@ -51,10 +51,12 @@ function isWin(){
 
         if(board[pos1] == board[pos2] && board[pos1] == board[pos3] && board[pos1] != ""){
             scoreboard(board[pos1]);
+            showWinnerMoves(pos1, pos2, pos3)
             return true
         }
     }
     return false;
 }
+
 
 

@@ -27,8 +27,14 @@ function player(choice){
         let scoreboard = document.getElementsByClassName("player")[1];
         scoreboard.innerHTML = `Computer = <span id="player-2">0</span>`;
     }else if(choice == 2){
-         computerVscomputer();
-         reset_computer = true;
+        let scoreboard_A = document.getElementsByClassName("player")[0];
+        scoreboard_A.innerHTML = `Computer 1 = <span id="player-1">0</span>`;
+
+        let scoreboard_B = document.getElementsByClassName("player")[1];
+        scoreboard_B.innerHTML = `Computer 2 = <span id="player-2">0</span>`;
+
+        computerVscomputer();
+        reset_computer = true;
     }
  
     gameMode = choice;
@@ -40,7 +46,7 @@ function handleClick(event){
     let square = event.target;
     let position = square.id;
 
-    if(hasWinner(position)){
+    if(handleMove(position)){
         setTimeout(()=>{
             playerWinner(playerTime)
         }, 30)
@@ -69,6 +75,7 @@ function cleanSquares(){
     let squares = document.querySelectorAll(".square") ;
     squares.forEach((square) =>{
         square.innerHTML = "";
+        square.classList.remove("squareWinner")
     })
 }
 
@@ -100,18 +107,36 @@ function scoreboard(result){
 
 // Display the winning player
 function playerWinner(player){
-    if(player == 0){
-        alert("Player 1 Win")
-    }else if(player == 1 && gameMode == 1){
-        alert("Computer Win")
-    }else{
-        alert("Player 2 Win")
+    if(player == 1 && gameMode == 1){
+        alert("Computer Win");
     }
+    else if(player == 0 && gameMode == 2){
+        alert("Computer 1 Win");
+    }
+    else if(player == 1 && gameMode == 2){
+        alert("Computer 2 Win");
+    }
+    else if(player == 0){
+        alert("Player 1 Win");
+    }
+    else{
+        alert("Player 2 Win");
+    }
+}
+
+// Show the winner moves
+function showWinnerMoves(num1, num2, num3){
+    let square1 = document.getElementById(num1);
+    let square2 = document.getElementById(num2);
+    let square3 = document.getElementById(num3);
+
+    square1.classList.add("squareWinner");
+    square2.classList.add("squareWinner");
+    square3.classList.add("squareWinner");
 }
 
 // Display draw
 function draw(moves){
-    console.log(moves)
     if(moves >= 8 && gameOver == false){
         setTimeout(()=>{
             alert("Draw")
@@ -131,14 +156,6 @@ function playAgain(){
     resetComputer();
 }
 
-// Check if has a winner
-function hasWinner(position){
-    if(handleMove(position)){
-        return true;
-    }else{
-        return false;
-    }
-}
 
 
 
