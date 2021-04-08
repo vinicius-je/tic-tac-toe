@@ -8,6 +8,10 @@
  
  ![](https://github.com/vinicius-je/tic-tac-toe/blob/main/img/presentation.jpg)
  
+## Course Version:
+
+![](https://github.com/vinicius-je/tic-tac-toe/blob/main/img/oldVersion.jpg)
+ 
  ## Technologies Used:
 * HTML
 * CSS
